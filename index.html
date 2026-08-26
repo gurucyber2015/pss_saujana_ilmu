@@ -1,0 +1,2236 @@
+<!doctype html>
+<html lang="ms" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pusat Sumber Saujana Ilmu - SMK Saujana Impian</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e3a5f', // Deep Crest Blue
+              900: '#0f172a'
+            },
+            crest: {
+              green: '#1b5e20',
+              gold: '#d97706',
+              red: '#dc2626'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    
+    .tab-btn.active {
+      background-color: #1e3a5f;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(30, 58, 95, 0.25);
+    }
+    
+    .tab-panel {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .tab-panel.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+    }
+
+    .badge-glow {
+      box-shadow: 0 0 15px rgba(217, 119, 6, 0.3);
+    }
+    
+    /* Custom scrollbar for tab navigation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+
+  <div class="bg-brand-800 text-amber-300 text-xs sm:text-sm py-2 px-4 border-b border-amber-500/20">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="font-medium">Waktu Operasi PSS: Isnin - Jumaat (7:30 AM - 4:30 PM)</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <span id="live-datetime" class="font-semibold text-slate-200"></span>
+        <span class="bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">Motto: Berakhlak Berilmu Berbakti</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="relative bg-gradient-to-r from-brand-900 via-brand-800 to-slate-900 text-white overflow-hidden shadow-lg">
+    <!-- Background Overlay Pattern -->
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 py-8 relative z-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        
+        <!-- Logo and Title Block -->
+        <div class="flex flex-col sm:flex-row items-center gap-5">
+          <!-- Official Crest Image -->
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 to-emerald-500 rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-300"></div>
+            <div class="relative bg-white p-2 rounded-2xl shadow-xl border border-white/20 w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center overflow-hidden">
+              <img src="Sekolah_Menengah_Kebangsaan_Saujana_Impian (1).jpg" 
+                   alt="Lencana SMK Saujana Impian" 
+                   class="max-w-full max-h-full object-contain transform group-hover:scale-105 transition duration-300"
+                   onerror="this.onerror=null; this.src='https://placehold.co/120x120/1e3a5f/ffffff?text=SMKSI';">
+            </div>
+          </div>
+
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold mb-2">
+              <i data-lucide="award" class="w-3.5 h-3.5"></i> Portal Rasmi PSS Digital
+            </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif tracking-tight text-white drop-shadow-sm">
+              PUSAT SUMBER SAUJANA ILMU
+            </h1>
+            <p class="text-amber-400 font-medium text-base sm:text-lg mt-1 tracking-wide">
+              SMK SAUJANA IMPIAN, KAJANG
+            </p>
+            <p class="text-slate-300 text-xs sm:text-sm mt-1 max-w-xl">
+              Wadah Pembelajaran Digital, Pemikiran Kritis & Budaya Membaca Sepanjang Hayat
+            </p>
+          </div>
+        </div>
+
+        <!-- Dynamic Quick Stats Widget -->
+		 <div class="grid grid-cols-3 gap-3 max-w-xl mx-auto mt-6 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 text-white shadow-lg">
+          <div class="text-center">
+            <div id="stat-books-val" class="text-xl sm:text-2xl font-bold text-amber-300">12,450+</div>
+            <div id="stat-books-label" class="text-[10px] sm:text-xs opacity-90">Buku & Bahan Media</div>
+          </div>
+          <div class="text-center border-x border-white/20 px-2">
+            <div id="stat-members-val" class="text-xl sm:text-2xl font-bold text-amber-300">1,280</div>
+            <div id="stat-members-label" class="text-[10px] sm:text-xs opacity-90">Ahli Berdaftar</div>
+          </div>
+          <div class="text-center">
+            <div id="stat-visitors-val" class="text-xl sm:text-2xl font-bold text-amber-300">3,420</div>
+            <div id="stat-visitors-label" class="text-[10px] sm:text-xs opacity-90">Pelawat Digital</div>
+          </div>
+        </div>
+      </div>
+    </header>
+       
+
+  <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-md">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between gap-2 overflow-x-auto no-scrollbar py-2">
+	    <button class="tab-btn active flex items-center gap-2 shrink-0 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 transition-all duration-200 hover:bg-slate-100" data-tab="pengumuman">
+          <i data-lucide="bell" class="w-4 h-4"></i> Pengumuman
+        </button>
+        <button class="tab-btn flex items-center gap-2 shrink-0 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 hover:bg-slate-100" data-tab="guru">
+          <i data-lucide="user-check" class="w-4 h-4"></i> Guru PSS
+        </button>
+       
+        <button class="tab-btn flex items-center gap-2 shrink-0 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 transition-all duration-200 hover:bg-slate-100" data-tab="ahli">
+          <i data-lucide="users" class="w-4 h-4"></i> Ahli & Pengawas
+        </button>
+               <a href="https://example.com/pameran-maya" target="_blank" rel="noopener noreferrer" class="my-auto my-1 flex-shrink-0 px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-amber-500/10 text-amber-700 hover:bg-amber-500 hover:text-white border border-amber-300/60 shadow-sm transition-all flex items-center gap-1.5 mx-1 group">
+          <i data-lucide="palette" class="w-4 h-4 text-amber-600 group-hover:text-white transition-colors"></i>
+          <span>Pameran Maya</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-70 group-hover:opacity-100"></i>
+        </a>
+        <a href="https://example.com/buku-digital" target="_blank" rel="noopener noreferrer" class="my-auto my-1 flex-shrink-0 px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-emerald-500/10 text-emerald-700 hover:bg-emerald-600 hover:text-white border border-emerald-300/60 shadow-sm transition-all flex items-center gap-1.5 mx-1 group">
+          <i data-lucide="book-open" class="w-4 h-4 text-emerald-600 group-hover:text-white transition-colors"></i>
+          <span>Buku Digital</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-70 group-hover:opacity-100"></i>
+        </a>
+        <button class="tab-btn flex items-center gap-2 shrink-0 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 transition-all duration-200 hover:bg-slate-100" data-tab="galeri">
+          <i data-lucide="camera" class="w-4 h-4"></i> Galeri PSS
+        </button>
+
+        <!-- AINS Dropdown Tab -->
+        <div class="relative group shrink-0">
+          <button class="tab-btn flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-all duration-200" data-tab="ains">
+            <i data-lucide="external-link" class="w-4 h-4 text-brand-700"></i> AINS
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+          </button>
+          <div class="absolute left-0 mt-1 w-56 bg-white border border-slate-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 p-2 space-y-1">
+            <a href="https://bit.ly/TEMPAHAN_PSS_SAUJANA" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-lg text-xs font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-800 transition">
+              <span>Borang Tempahan PSS</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+            <a href="https://ains.moe.gov.my" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-lg text-xs font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-800 transition">
+              <span>Portal Utama AINS</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+            <a href="https://sites.google.com/moe-dl.edu.my/delima" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-lg text-xs font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-800 transition">
+              <span>Portal DELIMa KPM</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- TVPSS Dropdown Tab -->
+        <div class="relative group shrink-0">
+          <button class="tab-btn flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-all duration-200" data-tab="tvpss">
+            <i data-lucide="tv" class="w-4 h-4 text-red-600"></i> TVPSS
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+          </button>
+          <div class="absolute left-0 mt-1 w-60 bg-white border border-slate-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 p-2 space-y-1">
+            <a href="https://www.youtube.com/@smksaujanaimpiankajang2974" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-lg text-xs font-semibold text-slate-700 hover:bg-red-50 hover:text-red-700 transition">
+              <span class="flex items-center gap-2"><i data-lucide="youtube" class="w-4 h-4 text-red-600"></i> YouTube SMKSI</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+            <a href="https://www.facebook.com/SmkSaujanaImpianVesi2012/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-lg text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition">
+              <span class="flex items-center gap-2"><i data-lucide="facebook" class="w-4 h-4 text-blue-600"></i> Facebook SMKSI</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+            <a href="https://www.tiktok.com/discover/smk-saujana-impian-kajang" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-black transition">
+              <span class="flex items-center gap-2"><i data-lucide="video" class="w-4 h-4 text-slate-900"></i> TikTok SMKSI</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <button class="tab-btn flex items-center gap-2 shrink-0 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 transition-all duration-200 hover:bg-slate-100" data-tab="tempahan">
+          <i data-lucide="calendar-check" class="w-4 h-4"></i> Tempahan Bilik Saujana
+        </button>
+        <button class="tab-btn flex items-center gap-2 shrink-0 px-4 py-2.5 rounded-xl text-sm font-semibold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 transition-all duration-200" data-tab="editor">
+          <i data-lucide="lock" class="w-4 h-4"></i> Mod Editor
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+ <!-- PANEL 2: PENGUMUMAN -->
+ <section class="tab-panel active" id="panel-pengumuman">
+      <div class="mb-6 bg-gradient-to-r from-brand-800 to-indigo-900 p-6 rounded-2xl text-white shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold">Pengumuman & Notis Terkini</h2>
+          <p class="text-xs text-slate-200 mt-1">Maklumat rasmi dan aktiviti Pusat Sumber Saujana Ilmu</p>
+        </div>
+        <span class="bg-amber-400/20 text-amber-300 border border-amber-400/30 text-xs px-3 py-1.5 rounded-full font-semibold">Terkini</span>
+      </div>
+
+      <div id="public-pengumuman-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Dynamic Announcements Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- Modal Pengumuman Penuh -->
+    <div id="announcement-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+      <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 flex flex-col">
+        <div class="p-6 border-b border-slate-100 flex items-start justify-between gap-4 sticky top-0 bg-white/95 backdrop-blur z-10">
+          <div>
+            <span id="ann-modal-category" class="inline-block bg-brand-100 text-brand-800 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-2">NOTIS</span>
+            <h3 id="ann-modal-title" class="text-xl font-bold text-slate-900 leading-snug">Tajuk Pengumuman</h3>
+            <p id="ann-modal-date" class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Tarikh
+            </p>
+          </div>
+          <button onclick="closeAnnouncementModal()" class="text-slate-400 hover:text-slate-600 p-2 rounded-xl hover:bg-slate-100 transition">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="p-6 space-y-4">
+          <img id="ann-modal-image" src="" alt="Pengumuman Image" class="w-full max-h-72 object-cover rounded-xl border border-slate-100 hidden">
+          <div id="ann-modal-content" class="text-sm text-slate-700 leading-relaxed whitespace-pre-line">
+            Penerangan pengumuman penuh...
+          </div>
+        </div>
+
+        <div class="p-4 border-t border-slate-100 bg-slate-50 rounded-b-2xl flex justify-end">
+          <button onclick="closeAnnouncementModal()" class="bg-brand-800 hover:bg-brand-700 text-white text-xs font-semibold px-5 py-2.5 rounded-xl transition">
+            Tutup Notis
+          </button>
+        </div>
+      </div>
+    </div>
+        </div>
+		
+    <section class="tab-panel active" id="panel-pengumuman">
+      <div class="space-y-6">
+        
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900">Pengumuman & Notis Terkini</h2>
+            <p class="text-slate-500 text-sm">Berita, aktiviti, dan jadual terkini Pusat Sumber Saujana Ilmu</p>
+          </div>
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap gap-2">
+            <button onclick="filterAnnouncements('semua')" class="ann-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-800 text-white">Semua</button>
+            <button onclick="filterAnnouncements('aktiviti')" class="ann-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-200 text-slate-700 hover:bg-slate-300">Aktiviti</button>
+            <button onclick="filterAnnouncements('notis')" class="ann-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-200 text-slate-700 hover:bg-slate-300">Notis Penting</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="announcement-grid">
+          <!-- Dynamic Announcements injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL 1: GURU PERPUSTAKAAN & MEDIA -->
+    <section class="tab-panel" id="panel-guru">
+      <div class="space-y-8">
+        
+        <!-- Welcome Banner -->
+        <div class="bg-gradient-to-r from-brand-800 to-slate-800 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
+          <div class="absolute -right-10 -bottom-10 opacity-10 text-white">
+            <i data-lucide="book-open-check" class="w-80 h-80"></i>
+          </div>
+          <div class="relative z-10 max-w-3xl">
+            <span class="bg-amber-500 text-slate-900 font-bold text-xs uppercase px-3 py-1 rounded-full">Perutusan Guru Media</span>
+            <h2 class="text-3xl font-extrabold font-serif mt-3">Selamat Datang ke Pusat Sumber Saujana Ilmu</h2>
+            <p class="mt-3 text-slate-200 leading-relaxed text-sm sm:text-base">
+              "Membaca Memperkaya Ilmu, Menginspirasi Masa Depan." Pusat Sumber Saujana Ilmu SMK Saujana Impian komited menyediakan persekitaran pembelajaran inklusif, berasaskan teknologi, dan kaya dengan maklumat berkualiti tinggi demi melahirkan generasi berilmu dan berakhlak mulia.
+            </p>
+          </div>
+        </div>
+
+        <!-- Teacher Profiles Section -->
+        <div>
+          <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+            <i data-lucide="award" class="text-brand-800"></i> Jawatankuasa Pengurusan PSS
+          </h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="teacher-grid-container">
+            <!-- Dynamic Teacher Content rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Vision & Mission -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="p-2 bg-emerald-600 text-white rounded-xl"><i data-lucide="compass" class="w-5 h-5"></i></div>
+              <h4 class="text-xl font-bold text-emerald-900">Visi PSS Saujana Ilmu</h4>
+            </div>
+            <p class="text-sm text-emerald-800 leading-relaxed">
+              Menjadikan Pusat Sumber Saujana Ilmu sebagai pusat kecemerlangan maklumat dan ilmu pengetahuaan berasaskan teknologi canggih.
+            </p>
+          </div>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="p-2 bg-amber-600 text-white rounded-xl"><i data-lucide="target" class="w-5 h-5"></i></div>
+              <h4 class="text-xl font-bold text-amber-900">Misi PSS Saujana Ilmu</h4>
+            </div>
+            <p class="text-sm text-amber-800 leading-relaxed">
+              Menyediakan kemudahan perkhidmatan sumber maklumat mesra pengguna, memperkasakan literasi maklumat murid, serta membudayakan amalan membaca secara berterusan.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+   
+
+    <!-- PANEL 3: AHLI & PENGAWAS -->
+    <section class="tab-panel" id="panel-ahli">
+      <div class="space-y-8">
+        
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Ahli & Pengawas PSS Saujana Ilmu</h2>
+          <p class="text-slate-500 text-sm">Barisan kepimpinan Pengawas Pusat Sumber & Jadual Tugas Harian</p>
+        </div>
+
+        <!-- High Committee Roster -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+            <i data-lucide="shield-check" class="text-amber-500"></i> AJK Tertinggi Pengawas PSS 2026
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="ajk-container">
+            <!-- Dynamic AJK injected via JS -->
+          </div>
+        </div>
+
+        <!-- Interactive Duty Schedule -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
+            <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+              <i data-lucide="calendar" class="text-brand-700"></i> Jadual Tugasan Harian Pengawas PSS
+            </h3>
+            <span class="text-xs bg-brand-50 text-brand-800 font-semibold px-3 py-1 rounded-full border border-brand-200">
+              Sesi Pagi & Petang
+            </span>
+          </div>
+
+          <!-- Day Tabs -->
+          <div class="flex gap-2 overflow-x-auto pb-2 border-b border-slate-200 mb-4">
+            <button onclick="showDutyDay('isnin')" class="duty-day-btn px-4 py-2 rounded-lg text-xs font-bold bg-brand-800 text-white">Isnin</button>
+            <button onclick="showDutyDay('selasa')" class="duty-day-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200">Selasa</button>
+            <button onclick="showDutyDay('rabu')" class="duty-day-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200">Rabu</button>
+            <button onclick="showDutyDay('khamis')" class="duty-day-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200">Khamis</button>
+            <button onclick="showDutyDay('jumaat')" class="duty-day-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200">Jumaat</button>
+          </div>
+
+          <!-- Duty Content Panel -->
+          <div id="duty-content" class="text-sm text-slate-700 space-y-3">
+            <!-- Dynamic Content Injected via JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PANEL 4: PAMERAN MAYA -->
+    <section class="tab-panel" id="panel-pameran">
+      <div class="space-y-6">
+        
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Pameran Maya PSS Saujana Ilmu</h2>
+          <p class="text-slate-500 text-sm">Pameran tematik multimedia secara dalam talian untuk rujukan murid</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Exhibition 1 -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition group">
+            <div class="h-48 bg-slate-800 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=600" alt="Pameran Kemerdekaan" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <!--<span class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Pameran Khas</span>-->
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 text-lg">Pameran Maya(Saujana EduVerse)</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Mari menikmati Pameran Maya yang dihasilkan oleh murid SMK Saujana Impian.
+              </p>
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="mt-4 w-full bg-brand-800 hover:bg-brand-700 text-white text-xs font-semibold py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i data-lucide="external-link" class="w-4 h-4"></i> Terokai Pameran Maya
+              </a>
+            </div>
+          </div>
+
+
+
+          <!-- Exhibition 2 
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition group">
+            <div class="h-48 bg-slate-800 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&q=80&w=600" alt="Pameran Sains" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Inovasi & STEM</span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 text-lg">Inovasi Teknologi & Kecerdasan Buatan (AI)</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Pendedahan mengenai Revolusi Perindustrian 4.0, aplikasi AI dalam pembelajaran, dan asas pengaturcaraan komputer.
+              </p>
+              <button onclick="openExhibitionModal('Inovasi Teknologi & AI', 'Meneroka aplikasi kecerdasan buatan, etika pembelajaran digital, serta contoh projek robotik sekolah yang pernah memenangi anugerah inovasi.', 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&q=80&w=800')" class="mt-4 w-full bg-brand-800 hover:bg-brand-700 text-white text-xs font-semibold py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i data-lucide="eye" class="w-4 h-4"></i> Terokai Pameran Maya
+              </button>
+            </div>
+          </div>
+
+          <!-- Exhibition 3 
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition group">
+            <div class="h-48 bg-slate-800 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=600" alt="Pameran Sastera" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Sastera & Seni</span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 text-lg">Sasterawan Negara & Karya Agung Melayu</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Mengenali tokoh Sasterawan Negara seperti A. Samad Said, Usman Awang, serta apresiasi puisi klasik Melayu.
+              </p>
+              <button onclick="openExhibitionModal('Sasterawan Negara & Karya Agung', 'Koleksi khas biografi ringkas para Sasterawan Negara, antologi puisi pilihan, serta rakaman deklamasi sajak oleh murid SMK Saujana Impian.', 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800')" class="mt-4 w-full bg-brand-800 hover:bg-brand-700 text-white text-xs font-semibold py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i data-lucide="eye" class="w-4 h-4"></i> Terokai Pameran Maya
+              </button>
+            </div>
+          </div>-->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL 5: BUKU DIGITAL -->
+    <section class="tab-panel" id="panel-buku">
+      <div class="space-y-6">
+        
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900">Koleksi Buku Digital (E-Buku)</h2>
+            <p class="text-slate-500 text-sm">Akses membaca e-buku percuma untuk warga SMK Saujana Impian</p>
+          </div>
+          
+          <!-- Book Search Input -->
+          <div class="relative w-full md:w-72">
+            <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input type="text" id="book-search-input" onkeyup="searchBooks()" placeholder="Cari tajuk / pengarang..." class="w-full pl-9 pr-4 py-2 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+          </div>
+        </div>
+
+        <!-- Book Category Filter -->
+        <div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+          <button onclick="filterBookCategory('semua')" class="book-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-brand-800 text-white">Semua</button>
+          <button onclick="filterBookCategory('spm')" class="book-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Rujukan SPM</button>
+          <button onclick="filterBookCategory('novel')" class="book-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Novel Melayu</button>
+          <button onclick="filterBookCategory('english')" class="book-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">English Fiction</button>
+          <button onclick="filterBookCategory('sains')" class="book-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Sains & Komik</button>
+        </div>
+
+        <!-- Books Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" id="books-container">
+          
+          <!-- Book Item 1 -->
+          <div class="book-card bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="spm" data-title="sejarah spm cemerlang">
+            <div class="p-3 text-center">
+              <div class="h-40 bg-brand-50 rounded-lg flex items-center justify-center p-2 mb-3 relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=300" alt="Buku Sejarah" class="h-full object-contain rounded shadow">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">PDF</span>
+              </div>
+              <h4 class="font-bold text-slate-800 text-xs line-clamp-2">Teknik Skor A Sejarah SPM</h4>
+              <p class="text-[11px] text-slate-500 mt-1">Dr. Ridzuan Hasan</p>
+            </div>
+            <div class="p-3 bg-slate-50 border-t border-slate-100">
+              <button onclick="openBookReaderModal('Teknik Skor A Sejarah SPM', 'Dr. Ridzuan Hasan', 'Panduan lengkap peta minda Sejarah Tingkatan 4 & 5 mengikut format Lembaga Peperiksaan.')" class="w-full bg-brand-800 hover:bg-brand-700 text-white text-[11px] font-semibold py-1.5 rounded-lg transition">
+                Baca Sekarang
+              </button>
+            </div>
+          </div>
+
+          <!-- Book Item 2 -->
+          <div class="book-card bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="novel" data-title="sesejambak bakti komsas">
+            <div class="p-3 text-center">
+              <div class="h-40 bg-amber-50 rounded-lg flex items-center justify-center p-2 mb-3 relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=300" alt="Novel Melayu" class="h-full object-contain rounded shadow">
+                <span class="absolute top-2 right-2 bg-amber-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">KOMSAS</span>
+              </div>
+              <h4 class="font-bold text-slate-800 text-xs line-clamp-2">Sejambak Bakti (Edisi Khas)</h4>
+              <p class="text-[11px] text-slate-500 mt-1">Rejab F.I.</p>
+            </div>
+            <div class="p-3 bg-slate-50 border-t border-slate-100">
+              <button onclick="openBookReaderModal('Sejambak Bakti', 'Rejab F.I.', 'Novel Komsas Tingkatan 1 mengenai kegigihan Razali membangunkan koperasi sekolah.')" class="w-full bg-brand-800 hover:bg-brand-700 text-white text-[11px] font-semibold py-1.5 rounded-lg transition">
+                Baca Sekarang
+              </button>
+            </div>
+          </div>
+
+          <!-- Book Item 3 -->
+          <div class="book-card bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="english" data-title="the secret garden novel">
+            <div class="p-3 text-center">
+              <div class="h-40 bg-blue-50 rounded-lg flex items-center justify-center p-2 mb-3 relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=300" alt="English Novel" class="h-full object-contain rounded shadow">
+                <span class="absolute top-2 right-2 bg-blue-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">EPUB</span>
+              </div>
+              <h4 class="font-bold text-slate-800 text-xs line-clamp-2">The Secret Garden</h4>
+              <p class="text-[11px] text-slate-500 mt-1">Frances Hodgson</p>
+            </div>
+            <div class="p-3 bg-slate-50 border-t border-slate-100">
+              <button onclick="openBookReaderModal('The Secret Garden', 'Frances Hodgson Burnett', 'Classic English literature set in Yorkshire, telling the story of Mary Lennox and a hidden magical garden.')" class="w-full bg-brand-800 hover:bg-brand-700 text-white text-[11px] font-semibold py-1.5 rounded-lg transition">
+                Baca Sekarang
+              </button>
+            </div>
+          </div>
+
+          <!-- Book Item 4 -->
+          <div class="book-card bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="sains" data-title="misteri alam semesta sains">
+            <div class="p-3 text-center">
+              <div class="h-40 bg-purple-50 rounded-lg flex items-center justify-center p-2 mb-3 relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=300" alt="Sains" class="h-full object-contain rounded shadow">
+                <span class="absolute top-2 right-2 bg-purple-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">INTERAKTIF</span>
+              </div>
+              <h4 class="font-bold text-slate-800 text-xs line-clamp-2">Misteri Galaksi & Astronomi</h4>
+              <p class="text-[11px] text-slate-500 mt-1">Akademi Sains Malaysia</p>
+            </div>
+            <div class="p-3 bg-slate-50 border-t border-slate-100">
+              <button onclick="openBookReaderModal('Misteri Galaksi & Astronomi', 'Akademi Sains Malaysia', 'Pengenalan bergambar mengenai planet, bintang, lubang hitam, dan penerokaan angkasa lepas.')" class="w-full bg-brand-800 hover:bg-brand-700 text-white text-[11px] font-semibold py-1.5 rounded-lg transition">
+                Baca Sekarang
+              </button>
+            </div>
+          </div>
+
+          <!-- Book Item 5 -->
+          <div class="book-card bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="spm" data-title="fizik kimia sains spm">
+            <div class="p-3 text-center">
+              <div class="h-40 bg-teal-50 rounded-lg flex items-center justify-center p-2 mb-3 relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=300" alt="Fizik SPM" class="h-full object-contain rounded shadow">
+                <span class="absolute top-2 right-2 bg-teal-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">MODUL</span>
+              </div>
+              <h4 class="font-bold text-slate-800 text-xs line-clamp-2">Modul Amali Fizik & Kimia</h4>
+              <p class="text-[11px] text-slate-500 mt-1">Panitia Sains SMKSI</p>
+            </div>
+            <div class="p-3 bg-slate-50 border-t border-slate-100">
+              <button onclick="openBookReaderModal('Modul Amali Fizik & Kimia', 'Panitia Sains SMKSI', 'Himpunan panduan amali dan eksperimen wajib sains untuk calon SPM.')" class="w-full bg-brand-800 hover:bg-brand-700 text-white text-[11px] font-semibold py-1.5 rounded-lg transition">
+                Baca Sekarang
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL: GALERI PSS -->
+    <section class="tab-panel" id="panel-galeri">
+      <div class="space-y-6">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900">Galeri PSS Saujana Ilmu</h2>
+            <p class="text-slate-500 text-sm">Koleksi gambar aktiviti, program, dan kenangan indah PSS Saujana Ilmu</p>
+          </div>
+          <div class="text-xs bg-brand-50 text-brand-800 font-semibold px-3 py-1.5 rounded-full border border-brand-200 flex items-center gap-1.5">
+            <i data-lucide="camera" class="w-4 h-4"></i> Album Foto Sekolah
+          </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="public-gallery-grid">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL: AINS -->
+    <section class="tab-panel" id="panel-ains">
+      <div class="space-y-6">
+        <div class="bg-gradient-to-r from-blue-900 to-brand-800 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
+          <div class="relative z-10 max-w-2xl">
+            <span class="bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Portal Sistem AINS</span>
+            <h2 class="text-3xl font-extrabold font-serif mt-3">Anugerah Nilam & Sistem AINS</h2>
+            <p class="text-slate-200 text-sm mt-2 leading-relaxed">
+              Akses pantas ke portal rekod bacaan NILAM, pautan borang tempahan bilik PSS Saujana, serta pelbagai kemudahan dalam talian.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Link 1 
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center mb-4">
+              <i data-lucide="calendar-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg">Borang Tempahan PSS</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Pautan direct bit.ly untuk tempahan ruang & penggunaan kemudahan PSS Saujana Ilmu.</p>
+            <a href="https://bit.ly/TEMPAHAN_PSS_SAUJANA" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 bg-brand-800 hover:bg-brand-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition">
+              Buka Pautan Tempahan <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>-->
+
+          <!-- Link 2 -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-2xl flex items-center justify-center mb-4">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg">Portal Rasmi AINS KPM</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Sistem perekodan bacaan NILAM digital murid bagi sekolah-sekolah Kementerian Pendidikan Malaysia.</p>
+            <a href="https://ains.moe.gov.my" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition">
+              Akses Portal AINS <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Link 3 -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 bg-blue-100 text-blue-800 rounded-2xl flex items-center justify-center mb-4">
+              <i data-lucide="laptop" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg">DELIMa KPM</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Platform digital bersepadu guru & murid untuk akses Google Classroom dan e-Buku KPM.</p>
+            <a href="https://sites.google.com/moe-dl.edu.my/delima" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition">
+              Akses DELIMa <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL: TVPSS -->
+    <section class="tab-panel" id="panel-tvpss">
+      <div class="space-y-6">
+        <div class="bg-gradient-to-r from-red-900 via-rose-900 to-slate-900 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
+          <div class="relative z-10 max-w-2xl">
+            <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">TVPSS Digital Studio</span>
+            <h2 class="text-3xl font-extrabold font-serif mt-3">Saluran TVPSS Saujana Impian</h2>
+            <p class="text-slate-200 text-sm mt-2 leading-relaxed">
+              Ikuti liputan berita sekolah, dokumentari, rakaman aktiviti murid, dan siaran langsung menerusi platform media sosial rasmi kami.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- YouTube Card -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+            <div class="p-6">
+              <div class="w-12 h-12 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center mb-4">
+                <i data-lucide="youtube" class="w-7 h-7"></i>
+              </div>
+              <span class="text-[10px] bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded uppercase">Saluran Video Rasmi</span>
+              <h3 class="font-bold text-slate-900 text-lg mt-2">YouTube SMKSI</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">Saksikan video dokumentari TVPSS, liputan kejohanan, serta video pendidikan ciptaan murid.</p>
+            </div>
+            <div class="p-4 bg-slate-50 border-t border-slate-100">
+              <a href="https://www.youtube.com/@smksaujanaimpiankajang2974" target="_blank" rel="noopener noreferrer" class="w-full bg-red-600 hover:bg-red-700 text-white text-xs font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                Lawati YouTube <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Facebook Card -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+            <div class="p-6">
+              <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-4">
+                <i data-lucide="facebook" class="w-7 h-7"></i>
+              </div>
+              <span class="text-[10px] bg-blue-100 text-blue-700 font-bold px-2 py-0.5 rounded uppercase">Muka Buku Rasmi</span>
+              <h3 class="font-bold text-slate-900 text-lg mt-2">Facebook SMKSI</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">Perkembangan semasa, album gambar program harian, serta makluman penting komuniti sekolah.</p>
+            </div>
+            <div class="p-4 bg-slate-50 border-t border-slate-100">
+              <a href="https://www.facebook.com/SmkSaujanaImpianVesi2012/" target="_blank" rel="noopener noreferrer" class="w-full bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                Lawati Facebook <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- TikTok Card -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+            <div class="p-6">
+              <div class="w-12 h-12 bg-slate-100 text-slate-900 rounded-2xl flex items-center justify-center mb-4">
+                <i data-lucide="video" class="w-7 h-7"></i>
+              </div>
+              <span class="text-[10px] bg-slate-200 text-slate-800 font-bold px-2 py-0.5 rounded uppercase">Kandungan Kreatif</span>
+              <h3 class="font-bold text-slate-900 text-lg mt-2">TikTok SMKSI</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">Video pendek kreatif, ulasan buku santai, dan sorotan aktiviti kokurikulum SMK Saujana Impian.</p>
+            </div>
+            <div class="p-4 bg-slate-50 border-t border-slate-100">
+              <a href="https://www.tiktok.com/discover/smk-saujana-impian-kajang" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-black text-white text-xs font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                Lawati TikTok <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL 6: TEMPAHAN BILIK -->
+	
+	  <section class="tab-panel" id="panel-tempahan">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left Column: Form & Selection -->
+        <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div>
+              <span class="text-xs font-bold text-brand-800 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Sistem Tempahan Dalam Talian</span>
+              <h2 class="text-2xl font-bold text-slate-900 mt-2">Borang Tempahan Bilik Saujana</h2>
+              <p class="text-xs text-slate-500 mt-1">Khusus untuk guru & ketua kelab/persatuan SMK Saujana Impian</p>
+            </div>
+            <!-- Buka Pautan Tempahan Button with Password Protection -->
+            <button onclick="promptBookingPassword()" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs px-4 py-2.5 rounded-xl shadow-md transition flex items-center gap-2 shrink-0">
+              <i data-lucide="key-round" class="w-4 h-4"></i> Buka Pautan Tempahan
+            </button>
+          </div>
+<!-- ... existing code ... -->
+  <!-- GENERAL MODAL CONTAINER -->
+  <div id="general-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <script>
+    function promptBookingPassword() {
+      const modal = document.getElementById('general-modal');
+      const modalBody = document.getElementById('modal-body-content');
+      if (!modal || !modalBody) return;
+
+      modalBody.innerHTML = `
+        <div class="text-center">
+          <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-full flex items-center justify-center mx-auto mb-3">
+            <i data-lucide="lock" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Akses Pautan Tempahan</h3>
+          <p class="text-xs text-slate-500 mt-1">Sila masukkan kata laluan keselamatan untuk membuka pautan tempahan.</p>
+          <form onsubmit="verifyBookingPassword(event)" class="mt-4 space-y-3">
+            <input type="password" id="booking-pass-input" placeholder="Masukkan kata laluan..." required class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+            <div id="booking-pass-error" class="text-xs text-red-600 hidden font-semibold bg-red-50 p-2 rounded-lg border border-red-200">
+              Kata laluan salah! Sila cuba lagi.
+            </div>
+            <div class="flex gap-2 pt-2">
+              <button type="button" onclick="closeModal()" class="flex-1 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold py-2.5 rounded-xl transition">Batal</button>
+              <button type="submit" class="flex-1 bg-brand-800 hover:bg-brand-700 text-white text-xs font-bold py-2.5 rounded-xl transition">Buka Pautan</button>
+            </div>
+          </form>
+        </div>
+      `;
+      modal.classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function verifyBookingPassword(e) {
+      e.preventDefault();
+      const inputPass = document.getElementById('booking-pass-input').value;
+      const errDiv = document.getElementById('booking-pass-error');
+
+      if (inputPass === 'pss4621') {
+        closeModal();
+        window.open('https://bit.ly/TEMPAHAN_PSS_SAUJANA', '_blank');
+      } else {
+        errDiv.classList.remove('hidden');
+      }
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('general-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    window.promptBookingPassword = promptBookingPassword;
+    window.verifyBookingPassword = verifyBookingPassword;
+    window.closeModal = closeModal;
+  </script>
+<!-- ... existing code ... 
+    <section class="tab-panel" id="panel-tempahan">
+      <div class="space-y-6">
+        <div class="bg-gradient-to-r from-blue-900 to-brand-800 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
+          <div class="relative z-10 max-w-2xl">
+            <h2 class="text-3xl font-extrabold font-serif mt-3">Sistem Tempahan Bilik PSSI</h2>
+            <p class="text-slate-200 text-sm mt-2 leading-relaxed">
+              Tempahan Bilik Pusat Sumber Saujana Ilmu
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Link 1 
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center mb-4">
+              <i data-lucide="calendar-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg">Borang Tempahan PSS</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Pautan direct bit.ly untuk tempahan ruang & penggunaan kemudahan PSS Saujana Ilmu.</p>
+            <a href="https://bit.ly/TEMPAHAN_PSS_SAUJANA" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 bg-brand-800 hover:bg-brand-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition">
+              Buka Pautan Tempahan <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+    <!--<section class="tab-panel" id="panel-tempahan">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left Column: Form & Selection 
+        <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="mb-6">
+            <span class="text-xs font-bold text-brand-800 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Sistem Tempahan Dalam Talian</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-2">Borang Tempahan Bilik Saujana</h2>
+            <p class="text-xs text-slate-500 mt-1">Khusus untuk guru & ketua kelab/persatuan SMK Saujana Impian</p>
+          </div>
+
+          <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+            
+            <!-- Room Selection
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-2">Pilih Ruang / Bilik</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                
+                <label class="border-2 border-slate-200 hover:border-brand-500 rounded-xl p-3 cursor-pointer transition flex items-start gap-3 has-[:checked]:border-brand-800 has-[:checked]:bg-brand-50/50">
+                  <input type="radio" name="room" value="Bilik Tayang Saujana (Muatan 60 Orang)" checked class="mt-1 text-brand-800">
+                  <div>
+                    <div class="font-bold text-slate-800 text-xs">Bilik Tayang Saujana</div>
+                    <div class="text-[11px] text-slate-500">Projektor HD, Penghawa Dingin (60 pax)</div>
+                  </div>
+                </label>
+
+                <label class="border-2 border-slate-200 hover:border-brand-500 rounded-xl p-3 cursor-pointer transition flex items-start gap-3 has-[:checked]:border-brand-800 has-[:checked]:bg-brand-50/50">
+                  <input type="radio" name="room" value="Bilik Perbincangan Kumpulan (Muatan 15 Orang)" class="mt-1 text-brand-800">
+                  <div>
+                    <div class="font-bold text-slate-800 text-xs">Bilik Perbincangan</div>
+                    <div class="text-[11px] text-slate-500">Papan Putih, Meja Bulat (15 pax)</div>
+                  </div>
+                </label>
+
+                <label class="border-2 border-slate-200 hover:border-brand-500 rounded-xl p-3 cursor-pointer transition flex items-start gap-3 has-[:checked]:border-brand-800 has-[:checked]:bg-brand-50/50">
+                  <input type="radio" name="room" value="Makmal Komputer PSS (20 Komputer)" class="mt-1 text-brand-800">
+                  <div>
+                    <div class="font-bold text-slate-800 text-xs">Makmal Komputer PSS</div>
+                    <div class="text-[11px] text-slate-500">20 Unit PC + Internet Pantas</div>
+                  </div>
+                </label>
+
+                <label class="border-2 border-slate-200 hover:border-brand-500 rounded-xl p-3 cursor-pointer transition flex items-start gap-3 has-[:checked]:border-brand-800 has-[:checked]:bg-brand-50/50">
+                  <input type="radio" name="room" value="Ruang Pembacaan Nilam" class="mt-1 text-brand-800">
+                  <div>
+                    <div class="font-bold text-slate-800 text-xs">Ruang NILAM Utama</div>
+                    <div class="text-[11px] text-slate-500">Zon Santai Lesehan & Sofa</div>
+                  </div>
+                </label>
+
+              </div>
+            </div>
+
+            <!-- Name and Email 
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nama Pemohon (Guru / Pelajar)</label>
+                <input type="text" required placeholder="Contoh: Cikgu Ahmad Bin Ismail" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Jawatan / Kelas</label>
+                <input type="text" required placeholder="Contoh: Guru Bahasa Melayu / 5 Impian 1" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+              </div>
+            </div>
+
+            <!-- Date and Time Slot 
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Tarikh Tempahan</label>
+                <input type="date" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Masa / Sesi Slot</label>
+                <select required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                  <option value="Sesi 1 (08:00 AM - 09:30 AM)">Sesi 1 (08:00 AM - 09:30 AM)</option>
+                  <option value="Sesi 2 (10:00 AM - 11:30 AM)">Sesi 2 (10:00 AM - 11:30 AM)</option>
+                  <option value="Sesi 3 (12:00 PM - 01:30 PM)">Sesi 3 (12:00 PM - 01:30 PM)</option>
+                  <option value="Sesi 4 (02:30 PM - 04:00 PM)">Sesi 4 (02:30 PM - 04:00 PM)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Purpose 
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Tujuan / Tajuk Program</label>
+              <textarea rows="2" placeholder="Sebutkan aktiviti atau tajuk pdpc yang akan dijalankan..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none"></textarea>
+            </div>
+
+            <!-- Submit Button 
+            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4"></i> Hantar Tempahan Sekarang
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Right Column: Room Guidelines & Status 
+        <div class="lg:col-span-5 space-y-6">
+          
+          <div class="bg-gradient-to-br from-brand-800 to-slate-900 text-white p-6 rounded-2xl shadow-md">
+            <h3 class="text-lg font-bold flex items-center gap-2">
+              <i data-lucide="info" class="text-amber-400"></i> Syarat & Etika Penggunaan Bilik
+            </h3>
+            <ul class="text-xs text-slate-200 mt-3 space-y-2 list-disc list-inside leading-relaxed">
+              <li>Tempahan hendaklah dibuat sekurang-kurangnya 1 hari sebelum tarikh penggunaan.</li>
+              <li>Pastikan semua suis lampu, penghawa dingin, dan projektor dimatikan selepas program.</li>
+              <li>Makanan berat dan minuman berkula tidak dibenarkan di dalam Bilik Tayang & Makmal.</li>
+              <li>Ketua penggunaan bertanggungjawab terhadap kebersihan dan keutuhan perkakasan PSS.</li>
+            </ul>
+          </div>
+
+          <!-- Status Checker Box 
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <h3 class="text-sm font-bold text-slate-800 mb-2">Semak Kod Tempahan Saya</h3>
+            <p class="text-xs text-slate-500 mb-3">Masukkan No. Kad Pengenalan / ID Guru untuk menyemak kelulusan tempahan</p>
+            <div class="flex gap-2">
+              <input type="text" id="booking-search-code" placeholder="Contoh: PSS-2026-8891" class="flex-grow px-3 py-2 border border-slate-300 rounded-lg text-xs">
+              <button onclick="checkBookingStatus()" class="bg-brand-800 text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-brand-700">Semak</button>
+            </div>
+            <div id="booking-status-result" class="mt-3 text-xs hidden"></div>
+          </div>-->
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PANEL 7: EDITOR PAGE (HALAMAN PENYUNTING PSS) -->
+    <section class="tab-panel" id="panel-editor">
+      <div class="space-y-6">
+        
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-slate-900 text-white p-6 rounded-3xl shadow-lg">
+          <div>
+            <span class="text-xs bg-amber-500 text-slate-950 font-bold px-2.5 py-0.5 rounded uppercase">Halaman Kawalan PSS</span>
+            <h2 class="text-2xl sm:text-3xl font-bold font-serif mt-1">Portal Penyunting PSS Saujana Ilmu</h2>
+            <p class="text-xs text-slate-300 mt-1">Kemaskini pengumuman, jadual tugas, ahli pengawas, dan maklumat guru PSS secara langsung.</p>
+          </div>
+          <div id="editor-auth-badge" class="hidden flex items-center gap-3">
+            <span class="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1 rounded-full font-semibold">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5 inline mr-1"></i> Editor Aktif
+            </span>
+            <button onclick="handleEditorLogout()" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition">
+              Log Keluar
+            </button>
+          </div>
+        </div>
+
+        <!-- LOGIN FORM (IF NOT AUTHENTICATED) -->
+        <div id="editor-login-box" class="max-w-md mx-auto bg-white p-8 rounded-2xl border border-slate-200 shadow-xl my-8">
+          <div class="text-center mb-6">
+            <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-full flex items-center justify-center mx-auto mb-3">
+              <i data-lucide="lock" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">Akses Penyunting PSS</h3>
+            <p class="text-xs text-slate-500 mt-1">Sila masukkan kata laluan untuk mengemaskini maklumat portal</p>
+          </div>
+
+          <form onsubmit="handleEditorLogin(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Kata Laluan Penyunting</label>
+              <input type="password" id="editor-pass-input" placeholder="Masukkan kata laluan..." required class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+            </div>
+            <div id="login-error-msg" class="text-xs text-red-600 hidden font-semibold bg-red-50 p-2.5 rounded-lg border border-red-200">
+              <i data-lucide="alert-circle" class="w-4 h-4 inline mr-1"></i> Kata laluan salah. Sila cuba lagi.
+            </div>
+            <button type="submit" class="w-full bg-brand-800 hover:bg-brand-700 text-white text-xs font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
+              <i data-lucide="log-in" class="w-4 h-4"></i> Log Masuk Editor
+            </button>
+          </form>
+        </div>
+
+        <!-- EDITOR DASHBOARD CONTENT (WHEN AUTHENTICATED) -->
+        <div id="editor-dashboard" class="hidden space-y-8">
+          <!-- Editor Section: Statistik Hadapan -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <div class="flex items-center gap-2 mb-4">
+            <i data-lucide="bar-chart-2" class="w-5 h-5 text-brand-800"></i>
+            <h3 class="font-bold text-slate-800 text-lg">Kemaskini Statistik Hadapan (3 Kotak Utama)</h3>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Kotak 1 -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-3">
+              <span class="text-xs font-bold text-brand-800 uppercase tracking-wider block">Kotak 1</span>
+              <div>
+                <label class="block text-xs font-medium text-slate-600 mb-1">Nilai / Angka</label>
+                <input type="text" id="edit-stat1-val" oninput="updateStatField('booksVal', this.value)" class="w-full text-sm p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none" placeholder="cth: 12,450+">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-600 mb-1">Label / Tajuk</label>
+                <input type="text" id="edit-stat1-label" oninput="updateStatField('booksLabel', this.value)" class="w-full text-sm p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none" placeholder="cth: Buku & Bahan Media">
+              </div>
+            </div>
+
+            <!-- Kotak 2 -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-3">
+              <span class="text-xs font-bold text-brand-800 uppercase tracking-wider block">Kotak 2</span>
+              <div>
+                <label class="block text-xs font-medium text-slate-600 mb-1">Nilai / Angka</label>
+                <input type="text" id="edit-stat2-val" oninput="updateStatField('membersVal', this.value)" class="w-full text-sm p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none" placeholder="cth: 1,280">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-600 mb-1">Label / Tajuk</label>
+                <input type="text" id="edit-stat2-label" oninput="updateStatField('membersLabel', this.value)" class="w-full text-sm p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none" placeholder="cth: Ahli Berdaftar">
+              </div>
+            </div>
+
+            <!-- Kotak 3 -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-3">
+              <span class="text-xs font-bold text-brand-800 uppercase tracking-wider block">Kotak 3</span>
+              <div>
+                <label class="block text-xs font-medium text-slate-600 mb-1">Nilai / Angka</label>
+                <input type="text" id="edit-stat3-val" oninput="updateStatField('visitorsVal', this.value)" class="w-full text-sm p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none" placeholder="cth: 3,420">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-600 mb-1">Label / Tajuk</label>
+                <input type="text" id="edit-stat3-label" oninput="updateStatField('visitorsLabel', this.value)" class="w-full text-sm p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none" placeholder="cth: Pelawat Digital">
+              </div>
+            </div>
+          </div>
+        </div>
+		
+		 <script>
+      // State Object for Stats
+      window.statsData = {
+        booksVal: '12,450+',
+        booksLabel: 'Buku & Bahan Media',
+        membersVal: '1,280',
+        membersLabel: 'Ahli Berdaftar',
+        visitorsVal: '3,420',
+        visitorsLabel: 'Pelawat Digital'
+      };
+
+      window.updateStatField = function(key, val) {
+        window.statsData[key] = val;
+        window.renderPublicStats();
+      };
+
+      window.renderPublicStats = function() {
+        const bVal = document.getElementById('stat-books-val');
+        const bLabel = document.getElementById('stat-books-label');
+        const mVal = document.getElementById('stat-members-val');
+        const mLabel = document.getElementById('stat-members-label');
+        const vVal = document.getElementById('stat-visitors-val');
+        const vLabel = document.getElementById('stat-visitors-label');
+
+        if (bVal) bVal.textContent = window.statsData.booksVal;
+        if (bLabel) bLabel.textContent = window.statsData.booksLabel;
+        if (mVal) mVal.textContent = window.statsData.membersVal;
+        if (mLabel) mLabel.textContent = window.statsData.membersLabel;
+        if (vVal) vVal.textContent = window.statsData.visitorsVal;
+        if (vLabel) vLabel.textContent = window.statsData.visitorsLabel;
+      };
+
+      window.populateEditorInputs = function() {
+        const s1Val = document.getElementById('edit-stat1-val');
+        const s1Lbl = document.getElementById('edit-stat1-label');
+        const s2Val = document.getElementById('edit-stat2-val');
+        const s2Lbl = document.getElementById('edit-stat2-label');
+        const s3Val = document.getElementById('edit-stat3-val');
+        const s3Lbl = document.getElementById('edit-stat3-label');
+
+        if (s1Val) s1Val.value = window.statsData.booksVal;
+        if (s1Lbl) s1Lbl.value = window.statsData.booksLabel;
+        if (s2Val) s2Val.value = window.statsData.membersVal;
+        if (s2Lbl) s2Lbl.value = window.statsData.membersLabel;
+        if (s3Val) s3Val.value = window.statsData.visitorsVal;
+        if (s3Lbl) s3Lbl.value = window.statsData.visitorsLabel;
+      };
+
+      // Call on initialize
+      document.addEventListener('DOMContentLoaded', () => {
+        window.renderPublicStats();
+        window.populateEditorInputs();
+      });
+    </script>
+<!-- ... existing code ... -->
+          <!-- Section: Manage Galeri PSS Pictures -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div class="mb-4">
+              <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="camera" class="text-brand-800"></i> Pengurusan Galeri PSS Saujana
+              </h3>
+              <p class="text-xs text-slate-500">Muat naik gambar baharu atau hapuskan gambar sedia ada dalam galeri</p>
+            </div>
+
+            <!-- Add Gallery Image Form -->
+            <form onsubmit="handleAddGalleryImage(event)" class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6 space-y-3">
+              <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">+ Tambah Gambar Baharu ke Galeri</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <input type="text" id="gal-title" placeholder="Tajuk Gambar / Aktiviti" required class="px-3 py-2 border rounded-lg text-xs">
+                <input type="text" id="gal-category" placeholder="Kategori (cth: Program NILAM, Pameran)" required class="px-3 py-2 border rounded-lg text-xs">
+                <input type="url" id="gal-url" placeholder="URL Gambar (http://...)" required class="px-3 py-2 border rounded-lg text-xs">
+              </div>
+              <textarea id="gal-caption" placeholder="Keterangan ringkas gambar..." rows="2" required class="w-full px-3 py-2 border rounded-lg text-xs"></textarea>
+              <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition">
+                + Tambah Gambar
+              </button>
+            </form>
+
+            <!-- Gallery Images List Table -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr class="border-b border-slate-200 text-slate-500 font-semibold bg-slate-50">
+                    <th class="p-3">Gambar</th>
+                    <th class="p-3">Tajuk</th>
+                    <th class="p-3">Kategori</th>
+                    <th class="p-3">Keterangan</th>
+                    <th class="p-3 text-right">Tindakan</th>
+                  </tr>
+                </thead>
+                <tbody id="editor-gallery-list">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 1: Manage Pengumuman -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div class="flex justify-between items-center mb-4">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                  <i data-lucide="bell" class="text-brand-800"></i> Pengurusan Pengumuman & Notis
+                </h3>
+                <p class="text-xs text-slate-500">Tambah pengumuman baharu atau hapuskan notis sedia ada</p>
+              </div>
+            </div>
+
+            <!-- Add Announcement Form -->
+            <form onsubmit="handleAddAnnouncement(event)" class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6 space-y-3">
+              <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">+ Tambah Pengumuman Baharu</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <input type="text" id="ann-title" placeholder="Tajuk Pengumuman" required class="px-3 py-2 border rounded-lg text-xs">
+                <input type="text" id="ann-badge" placeholder="Lencana (cth: Notis Operasi, Pertandingan)" required class="px-3 py-2 border rounded-lg text-xs">
+                <select id="ann-category" required class="px-3 py-2 border rounded-lg text-xs">
+                  <option value="aktiviti">Aktiviti</option>
+                  <option value="notis">Notis Penting</option>
+                </select>
+              </div>
+              <textarea id="ann-content" placeholder="Kandungan penuh pengumuman..." rows="2" required class="w-full px-3 py-2 border rounded-lg text-xs"></textarea>
+              <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition">
+                + Siarkan Pengumuman
+              </button>
+            </form>
+
+            <!-- Announcements Table List -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr class="border-b border-slate-200 text-slate-500 font-semibold bg-slate-50">
+                    <th class="p-3">Tajuk</th>
+                    <th class="p-3">Kategori</th>
+                    <th class="p-3">Tarikh</th>
+                    <th class="p-3 text-right">Tindakan</th>
+                  </tr>
+                </thead>
+                <tbody id="editor-announcement-list">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 2: Manage Guru PSS -->
+		        <!-- Guru Perpustakaan -->
+      <section class="tab-panel active" id="panel-guru">
+        <div class="mb-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-gradient-to-r from-brand-800 to-indigo-900 p-6 rounded-2xl text-white shadow-lg">
+          <div>
+            <h2 class="text-2xl font-bold">Barisan Pentadbir & Guru PSS</h2>
+            <p class="text-xs text-slate-200 mt-1">Pengurusan Pusat Sumber Saujana Ilmu SMK Saujana Impian</p>
+          </div>
+          <span class="bg-amber-400/20 text-amber-300 border border-amber-400/30 text-xs px-3 py-1.5 rounded-full font-semibold">Sesi 2026/2027</span>
+        </div>
+
+        <div id="public-guru-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Dynamic Teacher Cards Rendered via JS -->
+        </div>
+      </section>
+	  
+	  <!-- Editor Section: Pengurusan Guru & Pentadbir PSS -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200">
+            <div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="award" class="w-5 h-5 text-brand-800"></i>
+                <h3 class="font-bold text-slate-800 text-lg">Pengurusan Guru & Pentadbir PSS</h3>
+              </div>
+              <p class="text-xs text-slate-500 mt-0.5">Kemaskini jawatankuasa pengurusan PSS, tambah ahli baru, atau muat naik gambar profil.</p>
+            </div>
+            <button onclick="addNewGuruCard()" class="bg-brand-800 hover:bg-brand-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition flex items-center gap-2 shadow-sm">
+              <i data-lucide="plus-circle" class="w-4 h-4"></i> Tambah Guru / Pentadbir Baru
+            </button>
+          </div>
+          
+          <div id="editor-guru-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Dynamic Teacher Editor Inputs Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Editor Section: Pengumuman -->
+<!-- ... existing code ... -->
+    <script>
+      // Teacher Management Data State
+      window.guruData = [
+        {
+          id: 1,
+          category: 'PENASIHAT',
+          name: 'Tuan Haji Mashudi Bin Khailani',
+          role: 'Pengetua SMKSI',
+          desc: 'Penaung utama pemerkasaan program NILAM dan pendigitalan Pusat Sumber Saujana Ilmu.',
+          image: 'pengetua.png'
+        },
+        {
+          id: 2,
+          category: 'GURU PERPUSTAKAAN & MEDIA',
+          name: 'Cikgu Noraini Binti Abdul Razak',
+          role: 'Pegawai Media & Inovasi PSS',
+          desc: 'Bertanggungjawab terhadap pengurusan bahan koleksi, keceriaan, dan pelaksanaan sistem tempahan maya PSS.',
+          image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300'
+        },
+        {
+          id: 3,
+          category: 'PENYELARAS NILAM',
+          name: 'Puan Siti Zubaidah Binti Hassan',
+          role: 'Guru Penyelaras NILAM Sekolah',
+          desc: 'Pengurus rekod pembacaan murid dan penyelaras Anugerah NILAM peringkat daerah & negeri.',
+          image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&q=80&w=300'
+        }
+      ];
+
+      // Render Public View for Teachers
+      window.renderPublicGuru = function() {
+        const grid = document.getElementById('public-guru-grid');
+        if (!grid) return;
+
+        grid.innerHTML = window.guruData.map(guru => `
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="bg-brand-50 text-brand-800 border border-brand-200 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  ${guru.category || 'GURU / PENTADBIR'}
+                </span>
+                <i data-lucide="shield-check" class="w-4 h-4 text-brand-800 opacity-60"></i>
+              </div>
+              
+              <div class="flex items-center gap-4 mb-4">
+                <img src="${guru.image || 'https://placehold.co/150x150/1e3a5f/ffffff?text=Guru'}" 
+                     alt="${guru.name}" 
+                     onerror="this.src='https://placehold.co/150x150/1e3a5f/ffffff?text=Gambar+Guru'"
+                     class="w-16 h-16 rounded-2xl object-cover border-2 border-brand-100 shadow-sm flex-shrink-0 group-hover:scale-105 transition duration-300">
+                <div>
+                  <h3 class="font-bold text-slate-900 text-base leading-snug">${guru.name || 'Nama Guru'}</h3>
+                  <p class="text-xs font-semibold text-brand-800 mt-0.5">${guru.role || 'Jawatan'}</p>
+                </div>
+              </div>
+
+              <p class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-100 italic">
+                "${guru.desc || '-'}"
+              </p>
+            </div>
+          </div>
+        `).join('');
+
+        if (window.lucide) window.lucide.createIcons();
+      };
+
+      // Render Editor View for Teachers
+      window.renderEditorGuru = function() {
+        const container = document.getElementById('editor-guru-grid');
+        if (!container) return;
+
+        container.innerHTML = window.guruData.map((guru, index) => `
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4 relative group">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+              <span class="text-xs font-bold text-brand-800 uppercase tracking-wider">Guru / Pentadbir #${index + 1}</span>
+              ${window.guruData.length > 1 ? `
+                <button onclick="removeGuruCard(${index})" class="text-red-500 hover:text-red-700 text-xs font-semibold flex items-center gap-1 bg-red-50 hover:bg-red-100 px-2.5 py-1 rounded-lg transition" title="Hapus Guru Ini">
+                  <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Hapus
+                </button>
+              ` : ''}
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-slate-600 mb-1">Kategori / Lencana</label>
+              <input type="text" value="${guru.category}" oninput="updateGuruField(${index}, 'category', this.value)" class="w-full text-sm p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none" placeholder="cth: PENASIHAT">
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-slate-600 mb-1">Nama Guru / Pentadbir</label>
+              <input type="text" value="${guru.name}" oninput="updateGuruField(${index}, 'name', this.value)" class="w-full text-sm p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none" placeholder="cth: Cikgu Ahmad Bin Ali">
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-slate-600 mb-1">Jawatan Sub</label>
+              <input type="text" value="${guru.role}" oninput="updateGuruField(${index}, 'role', this.value)" class="w-full text-sm p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none" placeholder="cth: Pegawai Media PSS">
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-slate-600 mb-1">Fail / URL Gambar Profil Guru</label>
+              <div class="flex items-center gap-3">
+                <img src="${guru.image || 'https://placehold.co/100x100/1e3a5f/ffffff?text=Guru'}" 
+                     onerror="this.src='https://placehold.co/100x100/1e3a5f/ffffff?text=Guru'" 
+                     class="w-12 h-12 rounded-xl object-cover border border-slate-200 flex-shrink-0">
+                <input type="text" value="${guru.image}" oninput="updateGuruField(${index}, 'image', this.value)" class="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none font-mono" placeholder="cth: pengetua.png atau https://...">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-slate-600 mb-1">Peranan / Penerangan</label>
+              <textarea oninput="updateGuruField(${index}, 'desc', this.value)" rows="3" class="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none resize-none" placeholder="Penerangan tugas...">${guru.desc}</textarea>
+            </div>
+          </div>
+        `).join('');
+
+        if (window.lucide) window.lucide.createIcons();
+      };
+
+      // Add New Teacher Card
+      window.addNewGuruCard = function() {
+        window.guruData.push({
+          id: Date.now(),
+          category: 'AJK PSS',
+          name: 'Nama Guru Baru',
+          role: 'Jawatan Guru',
+          desc: 'Tanggungjawab dan peranan guru di Pusat Sumber.',
+          image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300'
+        });
+        window.renderPublicGuru();
+        window.renderEditorGuru();
+      };
+
+      // Remove Teacher Card
+      window.removeGuruCard = function(index) {
+        if (confirm('Adakah anda pasti untuk menghapus guru ini daripada senarai?')) {
+          window.guruData.splice(index, 1);
+          window.renderPublicGuru();
+          window.renderEditorGuru();
+        }
+      };
+
+      // Update Individual Field
+      window.updateGuruField = function(index, field, value) {
+        if (window.guruData[index]) {
+          window.guruData[index][field] = value;
+          window.renderPublicGuru();
+          // Update preview image in editor if image field changed
+          if (field === 'image') {
+            window.renderEditorGuru();
+          }
+        }
+      };
+
+      // State Object for Stats
+      window.statsData = {
+        booksVal: '12,450+',
+        booksLabel: 'Buku & Bahan Media',
+        membersVal: '1,280',
+        membersLabel: 'Ahli Berdaftar',
+        visitorsVal: '3,420',
+        visitorsLabel: 'Pelawat Digital'
+      };
+
+      window.updateStatField = function(key, val) {
+        window.statsData[key] = val;
+        window.renderPublicStats();
+      };
+
+      window.renderPublicStats = function() {
+        const bVal = document.getElementById('stat-books-val');
+        const bLabel = document.getElementById('stat-books-label');
+        const mVal = document.getElementById('stat-members-val');
+        const mLabel = document.getElementById('stat-members-label');
+        const vVal = document.getElementById('stat-visitors-val');
+        const vLabel = document.getElementById('stat-visitors-label');
+
+        if (bVal) bVal.textContent = window.statsData.booksVal;
+        if (bLabel) bLabel.textContent = window.statsData.booksLabel;
+        if (mVal) mVal.textContent = window.statsData.membersVal;
+        if (mLabel) mLabel.textContent = window.statsData.membersLabel;
+        if (vVal) vVal.textContent = window.statsData.visitorsVal;
+        if (vLabel) vLabel.textContent = window.statsData.visitorsLabel;
+      };
+
+      window.populateEditorInputs = function() {
+        const s1Val = document.getElementById('edit-stat1-val');
+        const s1Lbl = document.getElementById('edit-stat1-label');
+        const s2Val = document.getElementById('edit-stat2-val');
+        const s2Lbl = document.getElementById('edit-stat2-label');
+        const s3Val = document.getElementById('edit-stat3-val');
+        const s3Lbl = document.getElementById('edit-stat3-label');
+
+        if (s1Val) s1Val.value = window.statsData.booksVal;
+        if (s1Lbl) s1Lbl.value = window.statsData.booksLabel;
+        if (s2Val) s2Val.value = window.statsData.membersVal;
+        if (s2Lbl) s2Lbl.value = window.statsData.membersLabel;
+        if (s3Val) s3Val.value = window.statsData.visitorsVal;
+        if (s3Lbl) s3Lbl.value = window.statsData.visitorsLabel;
+      };
+
+      // Call on initialize
+      document.addEventListener('DOMContentLoaded', () => {
+        window.renderPublicStats();
+        window.populateEditorInputs();
+        window.renderPublicGuru();
+        window.renderEditorGuru();
+      });
+    </script>
+<!-- ... existing code ... -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+              <i data-lucide="award" class="text-brand-800"></i> Pengurusan Guru & Pentadbir PSS
+            </h3>
+            <p class="text-xs text-slate-500 mb-4">Kemaskini jawatankuasa pengurusan PSS</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="editor-teacher-list">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+          <!-- Section 3: Manage AJK Tertinggi Pengawas PSS -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+              <i data-lucide="shield-check" class="text-amber-500"></i> Pengurusan AJK Tertinggi Pengawas PSS
+            </h3>
+            <p class="text-xs text-slate-500 mb-4">Kemaskini nama pengerusi, naib pengerusi, dan jawatan utama pengawas</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="editor-ajk-list">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+          <!-- Section 4: Manage Jadual Tugas Harian -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+              <i data-lucide="calendar" class="text-brand-700"></i> Pengurusan Jadual Tugas Harian
+            </h3>
+            <p class="text-xs text-slate-500 mb-4">Kemaskini nama pengawas bertugas untuk setiap hari (Isnin - Jumaat)</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="editor-duty-list">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-brand-900 text-white border-t border-slate-800 mt-12 py-10 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Col 1: About -->
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="Sekolah_Menengah_Kebangsaan_Saujana_Impian (1).jpg" alt="SMKSI Logo" class="w-10 h-10 object-contain bg-white rounded-lg p-1" onerror="this.src='https://placehold.co/40x40/1e3a5f/ffffff?text=SMKSI'">
+          <div>
+            <h4 class="font-bold text-sm">Pusat Sumber Saujana Ilmu</h4>
+            <p class="text-[11px] text-amber-400">SMK Saujana Impian, Kajang</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Pusat pembelajaran bersepadu yang melahirkan modal insan berilmu, berakhlak, dan berbakti kepada masyarakat dan negara.
+        </p>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div>
+        <h4 class="font-bold text-sm text-white mb-3">Pautan Pantas</h4>
+        <ul class="text-xs text-slate-300 space-y-2">
+          <li><a href="#" onclick="switchTab('guru')" class="hover:text-amber-400">Profil Guru PSS</a></li>
+          <li><a href="#" onclick="switchTab('pengumuman')" class="hover:text-amber-400">Pengumuman & Notis Pertandingan</a></li>
+          <li><a href="#" onclick="switchTab('buku')" class="hover:text-amber-400">Katalog E-Buku Digital</a></li>
+          <li><a href="#" onclick="switchTab('tempahan')" class="hover:text-amber-400">Tempahan Bilik Tayangan Saujana</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div>
+        <h4 class="font-bold text-sm text-white mb-3">Hubungi Kami</h4>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Sekolah Menengah Kebangsaan Saujana Impian,<br>
+          Persiaran Impian Perdana, Saujana Impian,<br>
+          43000 Kajang, Selangor Darul Ehsan.
+        </p>
+        <p class="text-xs text-amber-400 mt-2 font-medium">E-mel: pss.smksaujanaimpian@gmail.edu.my</p>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto border-t border-slate-800 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-2">
+      <p>© 2026 Pusat Sumber Saujana Ilmu - SMK Saujana Impian. Hak Cipta Terpelihara.</p>
+      <p class="text-amber-400/80">Slogan: Berakhlak Berilmu Berbakti</p>
+    </div>
+  </footer>
+
+  <div id="general-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 bg-slate-100 rounded-full p-1">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <script>
+    /* Initialize Lucide Icons */
+    lucide.createIcons();
+
+    /* --- APPLICATION DATA STATE --- */
+    let galleryData = [
+      {
+        id: 1,
+        title: "Aktiviti Membaca NILAM PSS",
+        category: "Program NILAM",
+        url: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=800",
+        caption: "Sesi pembacaan NILAM bersama murid-murid di Ruang Pembacaan Utama PSS Saujana Ilmu."
+      },
+      {
+        id: 2,
+        title: "Bengkel Literasi Maklumat 2026",
+        category: "Bengkel & Latihan",
+        url: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+        caption: "Bengkel carian maklumat berkesan dan etika penggunaan AI untuk barisan Pengawas PSS."
+      },
+      {
+        id: 3,
+        title: "Sudut Pameran Kemerdekaan",
+        category: "Pameran",
+        url: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=800",
+        caption: "Koleksi pameran kemerdekaan hasil karya kreativiti jawatankuasa PSS Saujana Ilmu."
+      }
+    ];
+
+    let announcementsData = [
+      {
+        id: 1,
+        title: "Pelancaran Minggu Literasi Maklumat & Dekad Membaca Kebangsaan",
+        date: "10 Ogos 2026",
+        badge: "Aktiviti Utama",
+        category: "aktiviti",
+        content: "PSS Saujana Ilmu akan menganjurkan pelbagai aktiviti menarik termasuk pertandingan ulasan buku, kuiz literasi media, dan pameran buku maya sepanjang minggu ini."
+      },
+      {
+        id: 2,
+        title: "Pemulangan Buku Cerita & Pinjaman Bahan Percubaan SPM",
+        date: "01 Ogos 2026",
+        badge: "Notis Operasi",
+        category: "notis",
+        content: "Murid Tingkatan 5 dikehendaki memulangkan atau memperbaharui tempoh pinjaman buku fizikal sebelum persediaan peperiksaan Percubaan SPM bermula."
+      },
+      {
+        id: 3,
+        title: "Pertandingan Digital Book Trailer PSS Saujana Impian",
+        date: "25 Julai 2026",
+        badge: "Pertandingan",
+        category: "aktiviti",
+        content: "Cipta video gubahan trailer buku berdurasi 2 minit dan menangi hadiah menarik beserta sijil pencapaian peringkat sekolah."
+      }
+    ];
+
+    let teachersData = [
+      {
+        id: 1,
+        name: "Tuan Haji Mashudi Bin Khailani",
+        role: "Penasihat",
+        subRole: "Pengetua SMKSI",
+        badge: "Penasihat Utama",
+        type: "pengetua",
+        img: "pengetua2.png",
+        description: "Penaung utama pemerkasaan program NILAM dan pendigitalan Pusat Sumber Saujana Ilmu."
+      },
+      {
+        id: 2,
+        name: "Cikgu Noraini Binti Abdul Razak",
+        role: "Guru Perpustakaan & Media",
+        subRole: "Pegawai Media & Inovasi PSS",
+        badge: "GPM Utama",
+        type: "gpm",
+        img: "https://images.unsplash.com/photo-1580894732413-a7235a16369c?auto=format&fit=crop&q=80&w=200",
+        description: "Bertanggungjawab terhadap pengurusan bahan koleksi, keceriaan, dan pelaksanaan sistem tempahan maya PSS."
+      },
+      {
+        id: 3,
+        name: "Puan Siti Zubaidah Binti Hassan",
+        role: "Penyelaras NILAM",
+        subRole: "Guru Penyelaras NILAM Sekolah",
+        badge: "NILAM Coordinator",
+        type: "nilam",
+        img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
+        description: "Pengurus rekod pembacaan murid dan penyelaras Anugerah NILAM peringkat daerah & negeri."
+      }
+    ];
+
+    let ajkData = [
+      { id: 1, code: "P", name: "Muhammad Amirul Bin Azman", role: "Pengerusi PSS", form: "Tingkatan 5 Impian 1" },
+      { id: 2, code: "VP", name: "Nur Aisha Binti Kamaruddin", role: "Naib Pengerusi", form: "Tingkatan 5 Impian 2" },
+      { id: 3, code: "S", name: "Lim Xiu Ying", role: "Setiausaha", form: "Tingkatan 5 Impian 1" },
+      { id: 4, code: "K", name: "Kavineshan A/L Rajan", role: "Ketua Bendahari", form: "Tingkatan 4 Impian 1" }
+    ];
+
+    let dutyData = {
+      isnin: "Sesi Pagi: Muhammad Amirul & Nur Aisha (Kaunter Pinjaman)\nSesi Petang: Lim Xiu Ying & Ahmad Rayyan (Keceriaan & Rak Buku)",
+      selasa: "Sesi Pagi: Kavineshan & Sarah Binti Rosli (Katalog & Data)\nSesi Petang: Tan Wei Jie & Nurul Huda (Bilik Tayang Saujana)",
+      rabu: "Sesi Pagi: Danial Hakim & Siti Aisyah (Bilik Perbincangan)\nSesi Petang: Chloe Wong & Hariz Firdaus (Kemaskini E-Buku)",
+      khamis: "Sesi Pagi: Nurul Izzah & Farhan Bin Yusof (Promosi Nilam)\nSesi Petang: Adam Malik & Jessica Tan (Penyusunan Akhbar)",
+      jumaat: "Sesi Pagi: Semua Pengawas PSS (Gotong-Royong & Semakan Koleksi)\nSesi Petang: Penutupan dan Laporan Mingguan PSS"
+    };
+
+    let isEditorLoggedIn = false;
+
+    function updateDateTime() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+      document.getElementById('live-datetime').innerText = now.toLocaleDateString('ms-MY', options);
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+
+    /* --- TAB NAVIGATION --- */
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    function switchTab(tabId) {
+      tabs.forEach(btn => {
+        if (btn.dataset.tab === tabId) {
+          btn.classList.add('active');
+          btn.classList.remove('text-slate-600');
+        } else {
+          btn.classList.remove('active');
+          btn.classList.add('text-slate-600');
+        }
+      });
+
+      panels.forEach(panel => {
+        if (panel.id === 'panel-' + tabId) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+
+      window.scrollTo({ top: 250, behavior: 'smooth' });
+    }
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        switchTab(btn.dataset.tab);
+      });
+    });
+
+    /* --- RENDERING PUBLIC VIEWS --- */
+
+    function renderPublicGallery() {
+      const container = document.getElementById('public-gallery-grid');
+      if (!container) return;
+
+      if (galleryData.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center py-12 text-slate-400 bg-white rounded-2xl border border-slate-200 p-8">
+            <i data-lucide="image-off" class="w-12 h-12 mx-auto mb-2 text-slate-300"></i>
+            <p class="text-sm font-semibold">Tiada gambar dalam galeri pada masa ini.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = galleryData.map(g => `
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+          <div class="h-48 bg-slate-100 relative overflow-hidden">
+            <img src="${g.url}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/1e3a5f/ffffff?text=Galeri+PSS';">
+            <span class="absolute top-3 left-3 bg-brand-800 text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">${g.category}</span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-slate-900 text-sm line-clamp-1">${g.title}</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2">${g.caption}</p>
+            <button onclick="openImageModal('${g.title.replace(/'/g, "\\'")}', '${g.url.replace(/'/g, "\\'")}', '${g.caption.replace(/'/g, "\\'")}', '${g.category.replace(/'/g, "\\'")}')" class="mt-3 text-xs font-semibold text-brand-700 hover:text-brand-800 flex items-center gap-1">
+              Lihat Gambar <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    function renderPublicTeachers() {
+      const container = document.getElementById('teacher-grid-container');
+      if (!container) return;
+
+      container.innerHTML = teachersData.map(t => {
+        const borderStyle = t.type === 'gpm' ? 'border-2 border-brand-500 shadow-md relative overflow-hidden' : 'border border-slate-200 shadow-sm hover:shadow-md';
+        const badgeTag = t.type === 'gpm' ? `<div class="absolute top-0 right-0 bg-brand-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">${t.badge}</div>` : '';
+        const gpmContactBtn = t.type === 'gpm' ? `
+        
+        ` : '';
+
+        return `
+          <div class="bg-white rounded-2xl p-6 ${borderStyle} transition">
+            ${badgeTag}
+            <div class="w-20 h-20 rounded-full bg-brand-50 border-2 border-brand-800 mx-auto mb-4 flex items-center justify-center text-brand-800 font-bold text-xl overflow-hidden">
+              <img src="${t.img}" alt="${t.name}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/1e3a5f/ffffff?text=Guru';">
+            </div>
+            <div class="text-center">
+              <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">${t.role}</span>
+              <h4 class="font-bold text-slate-900 text-lg mt-2">${t.name}</h4>
+              <p class="text-xs text-slate-500 font-medium">${t.subRole}</p>
+              <p class="text-xs text-slate-600 mt-3 leading-relaxed">${t.description}</p>
+              ${gpmContactBtn}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function renderPublicAnnouncements() {
+      const container = document.getElementById('announcement-grid');
+      if (!container) return;
+
+      container.innerHTML = announcementsData.map(a => {
+        const bgGradient = a.category === 'notis' ? 'from-amber-600 to-amber-700' : 'from-brand-800 to-brand-700';
+        return `
+          <div class="ann-card bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition overflow-hidden" data-category="${a.category}">
+            <div class="bg-gradient-to-r ${bgGradient} p-4 text-white">
+              <span class="bg-emerald-500 text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded uppercase">${a.badge}</span>
+              <p class="text-xs text-brand-100 mt-2">${a.date}</p>
+              <h3 class="font-bold text-lg leading-snug mt-1">${a.title}</h3>
+            </div>
+            <div class="p-5">
+              <p class="text-xs text-slate-600 line-clamp-3">${a.content}</p>
+              <button onclick="viewAnnouncementModal('${a.title.replace(/'/g, "\\'")}', '${a.date}', '${a.badge}', '${a.content.replace(/'/g, "\\'")}')" class="mt-4 text-xs font-semibold text-brand-700 hover:text-brand-800 flex items-center gap-1">
+                Baca Pengumuman Penuh <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function renderPublicAJK() {
+      const container = document.getElementById('ajk-container');
+      if (!container) return;
+
+      container.innerHTML = ajkData.map(a => `
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-brand-800 text-amber-400 mx-auto flex items-center justify-center font-bold mb-2">
+            ${a.code}
+          </div>
+          <h4 class="font-bold text-slate-800 text-sm">${a.name}</h4>
+          <p class="text-xs text-brand-700 font-semibold">${a.role}</p>
+          <p class="text-[11px] text-slate-500 mt-1">${a.form}</p>
+        </div>
+      `).join('');
+    }
+
+    function showDutyDay(day) {
+      const contentDiv = document.getElementById('duty-content');
+      const btns = document.querySelectorAll('.duty-day-btn');
+
+      btns.forEach(b => {
+        b.classList.remove('bg-brand-800', 'text-white');
+        b.classList.add('bg-slate-100', 'text-slate-600');
+      });
+      if (event && event.target) {
+        event.target.classList.add('bg-brand-800', 'text-white');
+        event.target.classList.remove('bg-slate-100', 'text-slate-600');
+      }
+
+      const formattedDuty = (dutyData[day] || '').replace(/\n/g, '<br>');
+
+      contentDiv.innerHTML = `
+        <div class="p-4 bg-brand-50/50 border border-brand-200 rounded-xl">
+          <div class="font-bold text-brand-900 text-xs uppercase mb-1">Jadual Tugasan Hari ${day.toUpperCase()}</div>
+          <p class="text-xs text-slate-700 leading-relaxed">${formattedDuty}</p>
+        </div>
+      `;
+    }
+
+    /* --- EDITOR AUTHENTICATION LOGIC --- */
+    function handleEditorLogin(e) {
+      e.preventDefault();
+      const passInput = document.getElementById('editor-pass-input').value;
+      const errorMsg = document.getElementById('login-error-msg');
+
+      if (passInput === 'PSSSMKSI123') {
+        isEditorLoggedIn = true;
+        errorMsg.classList.add('hidden');
+        document.getElementById('editor-login-box').classList.add('hidden');
+        document.getElementById('editor-dashboard').classList.remove('hidden');
+        document.getElementById('editor-auth-badge').classList.remove('hidden');
+        document.getElementById('editor-pass-input').value = '';
+        renderEditorDashboard();
+      } else {
+        errorMsg.classList.remove('hidden');
+      }
+    }
+
+    function handleEditorLogout() {
+      isEditorLoggedIn = false;
+      document.getElementById('editor-login-box').classList.remove('hidden');
+      document.getElementById('editor-dashboard').classList.add('hidden');
+      document.getElementById('editor-auth-badge').classList.add('hidden');
+    }
+
+    /* --- EDITOR DASHBOARD MANAGEMENT --- */
+
+    function renderEditorDashboard() {
+      renderEditorGallery();
+      renderEditorAnnouncements();
+      renderEditorTeachers();
+      renderEditorAJK();
+      renderEditorDuty();
+    }
+
+    function renderEditorGallery() {
+      const listContainer = document.getElementById('editor-gallery-list');
+      if (!listContainer) return;
+
+      if (galleryData.length === 0) {
+        listContainer.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-slate-400">Tiada gambar dalam senarai galeri.</td></tr>`;
+        return;
+      }
+
+      listContainer.innerHTML = galleryData.map(g => `
+        <tr class="border-b border-slate-100 hover:bg-slate-50">
+          <td class="p-3">
+            <img src="${g.url}" alt="${g.title}" class="w-12 h-12 rounded-lg object-cover border" onerror="this.src='https://placehold.co/100x100/1e3a5f/ffffff?text=PSS';">
+          </td>
+          <td class="p-3 font-semibold text-slate-800">${g.title}</td>
+          <td class="p-3"><span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded text-[10px] font-bold">${g.category}</span></td>
+          <td class="p-3 text-slate-600 max-w-xs truncate">${g.caption}</td>
+          <td class="p-3 text-right">
+            <button onclick="deleteGalleryImage(${g.id})" class="bg-red-50 text-red-600 hover:bg-red-100 px-2.5 py-1 rounded font-bold transition">
+              Hapus
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function handleAddGalleryImage(e) {
+      e.preventDefault();
+      const title = document.getElementById('gal-title').value;
+      const category = document.getElementById('gal-category').value;
+      const url = document.getElementById('gal-url').value;
+      const caption = document.getElementById('gal-caption').value;
+
+      galleryData.unshift({
+        id: Date.now(),
+        title,
+        category,
+        url,
+        caption
+      });
+
+      e.target.reset();
+      renderEditorGallery();
+      renderPublicGallery();
+
+      alert('Gambar baharu berjaya ditambah ke Galeri PSS!');
+    }
+
+    function deleteGalleryImage(id) {
+      galleryData = galleryData.filter(g => g.id !== id);
+      renderEditorGallery();
+      renderPublicGallery();
+    }
+
+    function openImageModal(title, url, caption, category) {
+      const modalBody = document.getElementById('modal-body-content');
+      modalBody.innerHTML = `
+        <div class="rounded-xl overflow-hidden mb-4 bg-slate-900 max-h-80 flex items-center justify-center">
+          <img src="${url}" alt="${title}" class="max-h-80 w-auto object-contain">
+        </div>
+        <span class="text-[10px] bg-brand-100 text-brand-800 font-bold px-2 py-0.5 rounded uppercase">${category}</span>
+        <h3 class="text-lg font-bold text-slate-900 mt-2">${title}</h3>
+        <p class="text-xs text-slate-600 mt-2 leading-relaxed">${caption}</p>
+        <button onclick="closeModal()" class="mt-4 w-full bg-brand-800 text-white text-xs font-bold py-2.5 rounded-xl">Tutup</button>
+      `;
+      document.getElementById('general-modal').classList.remove('hidden');
+    }
+
+    function renderEditorAnnouncements() {
+      const listContainer = document.getElementById('editor-announcement-list');
+      if (!listContainer) return;
+
+      listContainer.innerHTML = announcementsData.map(a => `
+        <tr class="border-b border-slate-100 hover:bg-slate-50">
+          <td class="p-3 font-semibold text-slate-800">${a.title}</td>
+          <td class="p-3"><span class="bg-slate-100 px-2 py-0.5 rounded text-[10px] font-bold text-slate-700">${a.category.toUpperCase()}</span></td>
+          <td class="p-3 text-slate-500">${a.date}</td>
+          <td class="p-3 text-right">
+            <button onclick="deleteAnnouncement(${a.id})" class="bg-red-50 text-red-600 hover:bg-red-100 px-2.5 py-1 rounded font-bold transition">
+              Hapus
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function handleAddAnnouncement(e) {
+      e.preventDefault();
+      const title = document.getElementById('ann-title').value;
+      const badge = document.getElementById('ann-badge').value;
+      const category = document.getElementById('ann-category').value;
+      const content = document.getElementById('ann-content').value;
+
+      const newId = Date.now();
+      const todayDate = new Date().toLocaleDateString('ms-MY', { day: '2-digit', month: 'long', year: 'numeric' });
+
+      announcementsData.unshift({
+        id: newId,
+        title,
+        badge,
+        category,
+        content,
+        date: todayDate
+      });
+
+      e.target.reset();
+      renderEditorAnnouncements();
+      renderPublicAnnouncements();
+
+      alert('Pengumuman baharu berjaya diterbitkan!');
+    }
+
+    function deleteAnnouncement(id) {
+      announcementsData = announcementsData.filter(a => a.id !== id);
+      renderEditorAnnouncements();
+      renderPublicAnnouncements();
+    }
+
+    function renderEditorTeachers() {
+      const container = document.getElementById('editor-teacher-list');
+      if (!container) return;
+
+      container.innerHTML = teachersData.map((t, index) => `
+        <div class="p-4 border rounded-xl bg-slate-50 space-y-2">
+          <span class="text-[10px] font-bold bg-brand-100 text-brand-800 px-2 py-0.5 rounded uppercase">${t.role}</span>
+          <div>
+            <label class="block text-[10px] font-bold text-slate-500">Nama Guru</label>
+            <input type="text" value="${t.name}" onchange="updateTeacherField(${index}, 'name', this.value)" class="w-full p-1.5 text-xs border rounded">
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-slate-500">Jawatan Sub</label>
+            <input type="text" value="${t.subRole}" onchange="updateTeacherField(${index}, 'subRole', this.value)" class="w-full p-1.5 text-xs border rounded">
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-slate-500">Peranan / Penterangan</label>
+            <textarea onchange="updateTeacherField(${index}, 'description', this.value)" class="w-full p-1.5 text-xs border rounded" rows="2">${t.description}</textarea>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function updateTeacherField(index, field, value) {
+      teachersData[index][field] = value;
+      renderPublicTeachers();
+    }
+
+    function renderEditorAJK() {
+      const container = document.getElementById('editor-ajk-list');
+      if (!container) return;
+
+      container.innerHTML = ajkData.map((a, index) => `
+        <div class="p-4 border rounded-xl bg-slate-50 space-y-2">
+          <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded uppercase">${a.role}</span>
+          <div>
+            <label class="block text-[10px] font-bold text-slate-500">Nama Pelajar</label>
+            <input type="text" value="${a.name}" onchange="updateAJKField(${index}, 'name', this.value)" class="w-full p-1.5 text-xs border rounded">
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-slate-500">Kelas / Tingkatan</label>
+            <input type="text" value="${a.form}" onchange="updateAJKField(${index}, 'form', this.value)" class="w-full p-1.5 text-xs border rounded">
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function updateAJKField(index, field, value) {
+      ajkData[index][field] = value;
+      renderPublicAJK();
+    }
+
+    function renderEditorDuty() {
+      const container = document.getElementById('editor-duty-list');
+      if (!container) return;
+
+      const days = ['isnin', 'selasa', 'rabu', 'khamis', 'jumaat'];
+
+      container.innerHTML = days.map(day => `
+        <div class="p-4 border rounded-xl bg-slate-50 space-y-2">
+          <h4 class="font-bold text-xs text-brand-800 uppercase">Hari ${day}</h4>
+          <textarea onchange="updateDutyField('${day}', this.value)" class="w-full p-2 text-xs border rounded" rows="3">${dutyData[day]}</textarea>
+        </div>
+      `).join('');
+    }
+
+    function updateDutyField(day, value) {
+      dutyData[day] = value;
+      showDutyDay(day);
+    }
+
+    /* Initial Page Render Execution */
+    renderPublicGallery();
+    renderPublicTeachers();
+    renderPublicAnnouncements();
+    renderPublicAJK();
+    showDutyDay('isnin');
+
+    function filterAnnouncements(category) {
+      const cards = document.querySelectorAll('.ann-card');
+      const btns = document.querySelectorAll('.ann-filter-btn');
+
+      btns.forEach(b => {
+        b.classList.remove('bg-brand-800', 'text-white');
+        b.classList.add('bg-slate-200', 'text-slate-700');
+      });
+      if (event && event.target) {
+        event.target.classList.add('bg-brand-800', 'text-white');
+        event.target.classList.remove('bg-slate-200', 'text-slate-700');
+      }
+
+      cards.forEach(card => {
+        if (category === 'semua' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function viewAnnouncementModal(title, date, badge, content) {
+      const modalBody = document.getElementById('modal-body-content');
+      modalBody.innerHTML = `
+        <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full">${badge}</span>
+        <h3 class="text-xl font-bold text-slate-900 mt-2">${title}</h3>
+        <p class="text-xs text-slate-400 mt-1"><i data-lucide="calendar" class="w-3.5 h-3.5 inline mr-1"></i> Tarikh: ${date}</p>
+        <div class="my-4 border-t border-slate-100"></div>
+        <p class="text-xs text-slate-600 leading-relaxed">${content}</p>
+        <div class="mt-6 flex justify-end">
+          <button onclick="closeModal()" class="bg-brand-800 text-white text-xs font-bold px-4 py-2 rounded-xl">Tutup</button>
+        </div>
+      `;
+      document.getElementById('general-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function openExhibitionModal(title, description, imgUrl) {
+      const modalBody = document.getElementById('modal-body-content');
+      modalBody.innerHTML = `
+        <div class="h-48 rounded-xl overflow-hidden mb-4">
+          <img src="${imgUrl}" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg font-bold text-slate-900">${title}</h3>
+        <p class="text-xs text-slate-600 mt-2 leading-relaxed">${description}</p>
+        <div class="mt-4 p-3 bg-emerald-50 rounded-xl text-[11px] text-emerald-800 border border-emerald-200">
+          ✨ Mod Pameran Maya Aktif. Anda boleh mengakses bahan multimedia lanjutan menerusi kod QR di papan kenyataan PSS.
+        </div>
+        <button onclick="closeModal()" class="mt-4 w-full bg-brand-800 text-white text-xs font-bold py-2 rounded-xl">Tutup Pameran</button>
+      `;
+      document.getElementById('general-modal').classList.remove('hidden');
+    }
+
+    function openBookReaderModal(title, author, summary) {
+      const modalBody = document.getElementById('modal-body-content');
+      modalBody.innerHTML = `
+        <div class="bg-brand-800 text-white p-4 rounded-xl mb-4">
+          <span class="text-[10px] bg-amber-400 text-slate-900 font-bold px-2 py-0.5 rounded uppercase">E-Reader PSS</span>
+          <h3 class="text-lg font-bold mt-1">${title}</h3>
+          <p class="text-xs text-brand-200">Pengarang: ${author}</p>
+        </div>
+        <p class="text-xs text-slate-600 mb-4 leading-relaxed">${summary}</p>
+        <div class="bg-slate-100 p-6 rounded-xl text-center border-2 border-dashed border-slate-300">
+          <i data-lucide="book-open" class="w-10 h-10 text-brand-800 mx-auto mb-2"></i>
+          <p class="text-xs font-bold text-slate-700">Pratonton Bab 1 Berjaya Dimuat Turun</p>
+          <p class="text-[11px] text-slate-500 mt-1">Sistem NILAM Digital merekodkan bacaan anda secara automatik.</p>
+        </div>
+        <div class="mt-4 flex gap-2">
+          <button onclick="alert('Buku telah ditambah ke senarai kegemaran NILAM anda!')" class="flex-1 bg-amber-500 hover:bg-amber-600 text-slate-900 text-xs font-bold py-2 rounded-xl">Simpan ke NILAM</button>
+          <button onclick="closeModal()" class="flex-1 bg-slate-200 text-slate-700 text-xs font-bold py-2 rounded-xl">Tutup Viewer</button>
+        </div>
+      `;
+      document.getElementById('general-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function filterBookCategory(cat) {
+      const books = document.querySelectorAll('.book-card');
+      const btns = document.querySelectorAll('.book-cat-btn');
+
+      btns.forEach(b => {
+        b.classList.remove('bg-brand-800', 'text-white');
+        b.classList.add('bg-white', 'text-slate-700');
+      });
+      if (event && event.target) {
+        event.target.classList.add('bg-brand-800', 'text-white');
+        event.target.classList.remove('bg-white', 'text-slate-700');
+      }
+
+      books.forEach(b => {
+        if (cat === 'semua' || b.dataset.category === cat) {
+          b.style.display = 'flex';
+        } else {
+          b.style.display = 'none';
+        }
+      });
+    }
+
+    function searchBooks() {
+      const input = document.getElementById('book-search-input').value.toLowerCase();
+      const books = document.querySelectorAll('.book-card');
+
+      books.forEach(b => {
+        const title = b.dataset.title;
+        if (title.includes(input)) {
+          b.style.display = 'flex';
+        } else {
+          b.style.display = 'none';
+        }
+      });
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const bookingCode = 'PSS-2026-' + Math.floor(1000 + Math.random() * 9000);
+      
+      const modalBody = document.getElementById('modal-body-content');
+      modalBody.innerHTML = `
+        <div class="text-center">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3">
+            <i data-lucide="check-circle" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Tempahan Berjaya Dihantar!</h3>
+          <p class="text-xs text-slate-500 mt-1">Kod Rujukan Tempahan Anda:</p>
+          <div class="my-3 p-3 bg-slate-100 rounded-xl font-mono text-lg font-bold text-brand-800 tracking-wider">
+            ${bookingCode}
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Sila simpan kod ini untuk semakan status kelulusan oleh Guru Perpustakaan & Media (GPM).
+          </p>
+          <button onclick="closeModal()" class="mt-5 w-full bg-brand-800 text-white text-xs font-bold py-2.5 rounded-xl">Selesai</button>
+        </div>
+      `;
+      document.getElementById('general-modal').classList.remove('hidden');
+      document.getElementById('bookingForm').reset();
+      lucide.createIcons();
+    }
+
+    function checkBookingStatus() {
+      const code = document.getElementById('booking-search-code').value.trim();
+      const resultDiv = document.getElementById('booking-status-result');
+      
+      if (!code) {
+        resultDiv.className = "mt-3 text-xs p-3 rounded-lg bg-red-50 text-red-700 border border-red-200 block";
+        resultDiv.innerText = "Sila masukkan kod tempahan yang sah.";
+        return;
+      }
+
+      resultDiv.className = "mt-3 text-xs p-3 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 block";
+      resultDiv.innerHTML = `<strong>Status [${code}]:</strong> Diluluskan ✅ (Bilik Tayang Saujana - Sesi 2)`;
+    }
+
+    function openTeacherContactModal(name, role) {
+      const modalBody = document.getElementById('modal-body-content');
+      modalBody.innerHTML = `
+        <h3 class="text-lg font-bold text-slate-900">Hubungi ${name}</h3>
+        <p class="text-xs text-slate-500 mb-4">${role}</p>
+        <form onsubmit="event.preventDefault(); alert('Mesej anda telah dihantar ke e-mel rasmi PSS.'); closeModal();" class="space-y-3">
+          <input type="text" placeholder="Nama Anda" required class="w-full px-3 py-2 border rounded-lg text-xs">
+          <textarea placeholder="Tulis mesej atau pertanyaan anda..." rows="3" required class="w-full px-3 py-2 border rounded-lg text-xs"></textarea>
+          <button type="submit" class="w-full bg-brand-800 text-white font-bold text-xs py-2 rounded-xl">Hantar Mesej</button>
+        </form>
+      `;
+      document.getElementById('general-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('general-modal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
